@@ -4,19 +4,13 @@ GameManager::GameManager()
 {
 	m_gameOver = false;
 
-	const int level[] =
+	int *level = new int[3600];
+	for (int i = 0; i < 3600; i++)
 	{
-		0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-		0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 2, 0, 0, 0, 0,
-		1, 1, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3,
-		0, 1, 0, 0, 2, 0, 3, 3, 3, 0, 1, 1, 1, 0, 0, 0,
-		0, 1, 1, 0, 3, 3, 3, 0, 0, 0, 1, 1, 1, 2, 0, 0,
-		0, 0, 1, 0, 3, 0, 2, 2, 0, 0, 1, 1, 1, 1, 2, 0,
-		2, 0, 1, 0, 3, 0, 2, 2, 2, 0, 1, 1, 1, 1, 1, 1,
-		0, 0, 1, 0, 3, 2, 2, 2, 0, 0, 0, 0, 1, 1, 1, 1,
-	};
+			level[i] = rand() % 20; 
+	}
 
-	m_map.load("./Assests/Wood.png", sf::Vector2u(16, 16), level, 32, 16);
+	m_map.load("./Assests/Wood16.png", sf::Vector2u(16, 16), level, 80, 45);
 }
 
 bool GameManager::newGame()

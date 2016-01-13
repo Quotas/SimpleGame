@@ -4,7 +4,7 @@
 
 int main()
 {
-	auto *screen = new Screen(512, 256, "TestGame");
+	auto *screen = new Screen(1280, 720, "TestGame");
 	auto *game = new GameManager();
 
 	while (screen->isOpen())
